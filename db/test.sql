@@ -1,0 +1,15 @@
+CREATE DATABASE testapimysql;
+
+USE testapimysql;
+
+CREATE TABLE IF NOT EXISTS'users' {
+	'id' INT(10) unsigned NOT NULL AUTO_INCREMENT,
+	'username' VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
+	'EMAIL' VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
+	'password' VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
+	'created_at' TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	'updated_at' TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY ('id'),
+	UNIQUE KEY 'user_email_unique' ('email')
+} ENGINE = innoDB DEFAULT CHARACTER SET = utf8;
+
